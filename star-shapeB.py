@@ -13,3 +13,7 @@ def starshapeB(n):
         helper(a + 1, b)
 
     helper(1, n)
+    
+for n in [0,1,2,3,4,5,10]:
+  print(n)
+  starshapeB(n)
