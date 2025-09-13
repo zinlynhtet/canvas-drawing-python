@@ -1,9 +1,19 @@
-# Read input
-prices = list(map(float, input().split()))
-amounts = list(map(int, input().split()))
+# Read prices
+prices_input = input().split()
+prices = []
+for x in prices_input:
+    prices.append(float(x))
+
+# Read amounts
+amounts_input = input().split()
+amounts = []
+for x in amounts_input:
+    amounts.append(int(x))
 
 # Compute total cost
-total = sum(p * a for p, a in zip(prices, amounts))
+total = 0
+for i in range(len(prices)):
+    total += prices[i] * amounts[i]
 
 # Print rounded to 2 decimal places
-print(f"{total:.2f}")
+print("%.2f" % total)
