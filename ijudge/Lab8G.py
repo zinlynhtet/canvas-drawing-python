@@ -1,20 +1,23 @@
 s = input().strip()
 
 stack = []
-
+top = -1 
 balanced = True
 
 for char in s:
     if char == '(':
-        stack.append(char)
+        top = top + 1
+        try:
+            stack[top] = '('
+        except IndexError:
+            stack.append('(')
     elif char == ')':
-        if not stack:
+        if top == -1:
             balanced = False
             break
-        stack.pop()
+        top = top - 1
 
-# If stack is empty and no mismatches, it's balanced
-if stack:
+if top != -1:
     balanced = False
 
 print(balanced)
