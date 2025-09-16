@@ -34,3 +34,12 @@ while True:
         break
     print("Hello", s)
 print("Done")
+
+for n in range(2,101):
+    found_divisor = False
+    for d in range(2,n):
+        if n % d == 0:
+            found_divisor = True
+            break
+    else:
+        print(n, "is prime")
