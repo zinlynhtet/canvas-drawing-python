@@ -44,7 +44,7 @@ def draw_nested_squares():
     pendown()
     forward(500)
 
-def draw_cubic_curve():
+def draw_cubic_curve():  # sourcery skip: extract-duplicate-method
     setup_canvas()
 
     penup(); goto(-250, 0); pendown(); forward(500)  # x-axis

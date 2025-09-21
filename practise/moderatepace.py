@@ -8,6 +8,6 @@ plan = []
 for i in range(n):
     day_choices = [you[i], col1[i], col2[i]]
     day_choices.sort()
-    plan.append(day_choices[1])  
+    plan.append(day_choices[1])
 
 print(" ".join(map(str, plan)))

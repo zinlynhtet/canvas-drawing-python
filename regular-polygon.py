@@ -18,4 +18,4 @@ if 3 <= n <= 20:
     draw_polygon(n)
 else:
     print("Invalid input. Please enter an integer between 3 and 20.")
-done
+done()
