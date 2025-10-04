@@ -1,10 +1,14 @@
 import turtle
 import os
-
+class Messages:
+    WELCOME = "Welcome to the Line Drawing Visualizer!"
+    ERROR_FILE_NOT_FOUND = "Error: File not found."
+    ERROR_INVALID_FORMAT = "Error: Invalid line format."
+    DRAWING_COMPLETE = "Drawing complete! Close the window to exit."
 def draw_canvas(filename):
     
     screen = turtle.Screen()
-    screen.title("Line Drawing Visualizer")
+    screen.title(Messages.WELCOME)
     screen.setup(width=800, height=800)
 
     pen = turtle.Turtle()
@@ -13,7 +17,7 @@ def draw_canvas(filename):
     try:
         read_data(filename, pen, screen)
     except FileNotFoundError:
-        print(f"Error: File '{filename}' not found.")
+        print(Messages.ERROR_FILE_NOT_FOUND)
     except Exception as e:
         print(f"Error: {e}")
 
@@ -41,9 +45,9 @@ def read_data(filename, pen, screen):
                 pen.pendown()
                 first_point = False
         except ValueError:
-            print(f"Skipping invalid line: {line}")
+            print(f"{Messages.ERROR_INVALID_FORMAT} Line: {line}")
     pen.hideturtle()
-    print("Drawing complete! Close the window to exit.")
+    print(Messages.DRAWING_COMPLETE)
     screen.mainloop()
     
 base_path = r"C:\your\path\here"
